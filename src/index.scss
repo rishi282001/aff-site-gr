@@ -1,0 +1,77 @@
+@import "./media.scss";
+$primary-color: #9EEBE2;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $primary-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@mixin flexBox() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login, .register {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  @include flexBox();
+
+  table {
+    padding: 80px 20px 80px 20px;
+    background-color: #fff;
+    border-radius: 60px;
+    border: 1px solid #fff;
+  }
+
+  input {
+    padding: 10px 10px 10px 19px;
+    border-radius: 25px;
+    background-color: #E8E7E7;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #login-btn, #reg-btn {
+    position: relative;
+    height: 41px;
+    width: 125px;
+    top: 20px;
+    background-color: #0077FF;
+    border: none;
+    border-radius: 40px;
+    color:#fff;
+    outline: none;
+    font-weight: 600;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 700ms ease;
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  transition: opacity 700ms ease;
+  opacity: 0;
+}
