@@ -1,24 +1,76 @@
 import { Link } from "react-router-dom";
 import { useLogin } from "./useLogin";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Axios from "axios";
 
 export function Login() {
-    const loginkey = 'login-key';
-    const[values,handleValues] = useLogin(loginkey,{email: '', password: ''});
+  const loginkey = "login-key";
+  const [values, handleValues] = useLogin(loginkey, {
+    email: "",
+    password: "",
+  });
 
-    return (
-        <div className="login">
-            <div className="login-panel">
-                <TextField type="email" fullWidth onChange={(e) => {handleValues(e);}}  value={values.email} name="email" id="email-input" label="Email id" variant="outlined" />
-                <TextField type="password" fullWidth value={values.password} onChange={(e) => {handleValues(e)}} name="password" id="password-input" label="Password" variant="outlined" />
-                <Button id="login-btn" variant="contained" size="medium" color="primary">
-                    Login
-                </Button>
-                <span>
-                    Don't have an account ? <Link to="/register">Register</Link>
-                </span>
-            </div>
-        </div>
-    );
+  const handleLogin = () => {
+    const emailInput = document.getElementById('email-input').value;
+    const passwordInput = document.getElementById('password-input').value;
+    const loginBtn = document.getElementById('login-btn');
+
+    const url = `http://localhost:9000/login/?email=${emailInput}&password=${passwordInput}`;
+    Axios.get(url)
+      .then((res) => {
+          if(res.data.status === 200 && res.data.data[0]['COUNT(*)'] > 0) {
+            console.log(res.data.data[0]['COUNT(*)']);
+          }
+          else
+            console.log(res.data);
+      })
+      .catch((err) => {
+          console.log(err);
+      });
+  };
+
+  return (
+    <div className="login">
+      <div className="login-panel">
+        <TextField
+          type="email"
+          fullWidth
+          onChange={(e) => {
+            handleValues(e);
+          }}
+          value={values.email}
+          name="email"
+          id="email-input"
+          label="Email id"
+          variant="outlined"
+        />
+        <TextField
+          type="password"
+          fullWidth
+          value={values.password}
+          onChange={(e) => {
+            handleValues(e);
+          }}
+          name="password"
+          id="password-input"
+          label="Password"
+          variant="outlined"
+        />
+        <Button
+          id="login-btn"
+          variant="contained"
+          size="medium"
+          color="primary"
+          onClick={() => {handleLogin()}}
+        >
+          Login
+        </Button>
+
+        <span>
+          Don't have an account ? <Link to="/register">Register</Link>
+        </span>
+      </div>
+    </div>
+  );
 }

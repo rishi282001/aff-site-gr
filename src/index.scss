@@ -29,6 +29,14 @@ code {
   width: 100vw;
   @include flexBox();
 
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   .login-panel, .register-panel {
     width: 350px;
     @include flexBox();
