@@ -23,8 +23,24 @@ code {
   align-items: center;
 }
 
+.popup {
+  position: absolute;
+  height: 30px;
+  width: fit-content;
+  padding: 2px 20px 2px 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 7px;
+  color: #000;
+  right: 0; left: 0;
+  margin: auto;
+  transition: 1s ease-out;
+  transform: translateY(-100px);
+}
+
 
 .login, .register {
+  position: absolute;
   height: 100vh;
   width: 100vw;
   @include flexBox();
