@@ -1,4 +1,5 @@
 import './App.scss';
+import { Home } from "./Home";
 import { Login } from "./Login";
 import { Register } from "./Register";
 import { Route, Switch, useLocation } from "react-router-dom";
@@ -19,6 +20,7 @@ function App() {
           <Switch location={location}>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/" component={Home} />
             <Route component={NotFound} />
           </Switch>
         </div>

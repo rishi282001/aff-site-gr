@@ -11,5 +11,9 @@ export function popper(message) {
 
     setTimeout(() => {
         popup.style.transform = "translateY(-100px)";
+
+        setTimeout(() => {
+            root.removeChild(popup);    
+        }, 500);
     }, 2800);
 }
