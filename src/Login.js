@@ -37,6 +37,7 @@ export function Login() {
   }
 
   return (
+
     <div className="login">
       <div className="login-panel">
         <TextField
@@ -72,8 +73,7 @@ export function Login() {
         >
           Login
         </Button>
-
-        <span>
+        <span className="link-holder">
           Don't have an account ? <Link to="/register">Register</Link>
         </span>
       </div>

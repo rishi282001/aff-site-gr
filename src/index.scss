@@ -2,6 +2,12 @@
 $primary-color: #9EEBE2;
 
 
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,11 +23,19 @@ code {
     monospace;
 }
 
+
+
+
 @mixin flexBox() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+/*  Popup notification style */
 
 .popup {
   position: absolute;
@@ -39,6 +53,10 @@ code {
 }
 
 
+
+
+/* Login and register panel */
+
 .login, .register {
   position: absolute;
   height: 100vh;
@@ -55,6 +73,7 @@ code {
 
   .login-panel, .register-panel {
     width: 350px;
+    position: relative;
     @include flexBox();
     margin: 5px;
     flex-direction: column;
@@ -71,6 +90,7 @@ code {
   }
 
   .MuiFormControl-root.MuiTextField-root {
+
     fieldset {
       border: none;
     }
@@ -97,8 +117,6 @@ code {
     position: relative;
     height: 41px;
     width: 125px;
-    top: 20px;
-    margin-bottom: 5px;
     background-color: #0077FF;
     border: none;
     border-radius: 40px;
@@ -109,65 +127,83 @@ code {
   }
 }
 
+
+
+
+/* Home */
+
+
 .home {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
 
-.product {
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  padding: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10px;
 
-  img {
-    height: 150px;
-    width: 150px;
-  }
+/* Product */
+
+.product {
+  width: calc(50px + 60vw);
+  margin: 5px auto 0 auto;
 
   &-details {
-    @include flexBox();
-    border: 2px solid red;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    justify-content: space-between;
+    padding: 20px; 
+    background: #FFF; 
 
-  &-details-1 {
-    @include flexBox();
-    column-gap: 20px;
-    text-align: left;
+    img {
+      height: 150px;
+      width: 150px;
+    }
+
+    div {
+      flex: 1;
+    }
 
     .item {
       display: flex;
       flex-direction: column;
-    }
-  }
+      text-align: left;
+      justify-content: center;
 
-  &-details-2 {
-    .button-holder {
-      display: flex;
-      flex-direction: column;
-
-      .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
-        position: relative;
-        height: 41px;
-        width: 125px;
-        font-family: 'Inter', sans-serif;
-        margin-bottom: 5px;
-        background-color: #0077FF;
-        border: none;
-        border-radius: 4px;
-        color:#fff;
-        outline: none;
-        font-weight: 600;
-        font-size: 9pt;
-        text-transform: none;
+      .product-title {
+        font-size: 1rem;
+        font-weight: bold;
       }
+    }
+
+    .button-holder {
+      @include flexBox();
+      flex-direction: column;
+    }
+
+    .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+      height: 41px;
+      width: 125px;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 5px;
+      background-color: #0077FF;
+      border: none;
+      border-radius: 4px;
+      color:#fff;
+      outline: none;
+      font-weight: 200;
+      font-size: 9pt;
+      text-transform: none;
     }
   }
 }
 
+
+
+
+
+
+
+/* Router animation */
 
 .fade-enter {
   opacity: 0;
@@ -188,11 +224,71 @@ code {
 }
 
 
+
+
+
+
+/* Responsive media query */
+
+
+@media(max-width: 760px) {
+  .product {
+    width: 96vw;
+  }
+}
+
+@media(max-width: 469px) {
+  .product {
+    &-details {
+      padding: 10px;
+    }
+  
+    img {
+      flex-basis: 100%;
+      margin: 5px;
+    }
+
+    .button-holder {
+      margin: 10px;
+      flex-direction: row;
+      flex-basis: 100%;
+
+      .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+        width: 100%;
+        margin: 0 2px 0 2px;
+      }
+    }
+  }
+}
+
 @media(max-width: 319px) {
   .login, .register {
     .login-panel, .register-panel {
       border-radius: 10px;
       padding: 80px 0 80px 0;
+    }
+  }
+}
+
+@media(max-width: 286px) {
+  .product {
+    .button-holder {
+      flex-wrap: wrap;
+      
+      .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+        width: 100%;
+        margin: 2px 2px 2px 2px;
+      }
+    }
+  }
+}
+
+@media(max-width: 200px) {
+  .product {
+    width: 100vw;
+
+    img {
+      // align-self: stretch;
     }
   }
 }
