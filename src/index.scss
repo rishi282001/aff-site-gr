@@ -55,6 +55,30 @@ code {
 
 
 
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #FFF;
+
+  .icon-holder {
+    display: flex;
+    flex-direction: column;
+
+
+    .MuiButtonBase-root.MuiIconButton-root  {
+      font-size: 10pt;
+      border-radius: 4px;
+      color: #0077FF;
+    }
+  }
+}
+
+
+
+
 /* Login and register panel */
 
 .login, .register {
@@ -230,7 +254,6 @@ code {
 
 /* Responsive media query */
 
-
 @media(max-width: 760px) {
   .product {
     width: 96vw;
@@ -274,7 +297,7 @@ code {
   .product {
     .button-holder {
       flex-wrap: wrap;
-      
+
       .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
         width: 100%;
         margin: 2px 2px 2px 2px;
@@ -286,9 +309,5 @@ code {
 @media(max-width: 200px) {
   .product {
     width: 100vw;
-
-    img {
-      // align-self: stretch;
-    }
   }
 }

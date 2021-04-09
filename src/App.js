@@ -1,4 +1,5 @@
 import './App.scss';
+import { Navbar } from "./Navbar";
 import { Home } from "./Home";
 import { Login } from "./Login";
 import { Register } from "./Register";
@@ -17,6 +18,7 @@ function App() {
         key={location.pathname}
       >
         <div className="App">
+          <Navbar />
           <Switch location={location}>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

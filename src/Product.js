@@ -5,7 +5,7 @@ export function Product(props) {
         <div className="product">
             <div className="product-details">
                 <div>
-                    <img src="image.png" /> 
+                    <img src="image.png" />
                 </div>
                 <div className="item">
                     <span className="product-title"> {props.title} </span>
