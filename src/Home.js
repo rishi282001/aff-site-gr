@@ -28,17 +28,17 @@ export function Home() {
     return(
         <div className="home">
             {
-                products.map((product, key) => {
-                    return(
-                        <Product
-                          imgLink={product.imgLink}
-                          title={product.title}
-                          price={product.price}
-                          rating={product.rating}
-                          totalRating={product.totalRating}
-                        />
-                    );
-                })
+                // products.map((product, key) => {
+                //     return(
+                //         <Product
+                //           imgLink={product.imgLink}
+                //           title={product.title}
+                //           price={product.price}
+                //           rating={product.rating}
+                //           totalRating={product.totalRating}
+                //         />
+                //     );
+                // })
             }
         </div>
     );
