@@ -1,47 +1,51 @@
 import IconButton from '@material-ui/core/IconButton';
+import {useEffect} from "react";
 
 export function Navbar() {
-    let count = 1;
+    let count = 0;
     let overlay = document.createElement("div");
     overlay.setAttribute("class","overlay");
+    overlay.addEventListener("click",() => handleSlide());
+
+    // useEffect(() => {
+    //     window.addEventListener('resize',() => {
+           
+    //     });
+    // },[]);
 
     function handleSlide() {
         let navContent = document.querySelector(".nav-content");
         let barsButton = document.querySelector("#bars-btn");
         let body = document.getElementById("root");
-        let overlayDiv = document.querySelector(".overlay");
-        console.log(count);
+        count++;
 
-        if(count % 2 !== 0) 
+        if(count % 2 !== 0)
         {
            navContent.style.display = "block";
            body.appendChild(overlay);
-           document.querySelector(".overlay")
-                .addEventListener("click",() => handleSlide());
 
            setTimeout(() => {
                 navContent.style.transform = "translateX(0)";
                 barsButton.style.transform = "translateX(220px)";
                 setTimeout(() => {
-                    barsButton.setAttribute("class","fa fa-times");
+                    if(navContent.style.display === "block")
+                        barsButton.setAttribute("class","fa fa-times");
                 }, 500);
-           }, 500);
+           }, 200);
         }
         else 
         {
             body.removeChild(overlay);
             barsButton.setAttribute("class","fa fa-bars");
-            navContent.style.transform = "translateX(-50vw)";
+            navContent.style.transform = "translateX(-100vw)";
             barsButton.style.transform = "translateX(0)";
             setTimeout(() => {
                 navContent.style.display = "none";
            }, 600);
         }
-
-        count++;
     }
 
-    return(
+    return (
         <div className="navbar">
             <IconButton onClick={() => handleSlide()}>
                 <i id="bars-btn" className="fa fa-bars" aria-hidden="true"></i>

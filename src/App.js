@@ -6,6 +6,7 @@ import { Register } from "./Register";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { NotFound } from "./NotFound";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Titlebar } from "./Titlebar"
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
         key={location.pathname}
       >
         <div className="App">
+          <Titlebar />
           <Navbar />
           <Switch location={location}>
             <Route exact path="/login" component={Login} />
@@ -30,5 +32,6 @@ function App() {
     </TransitionGroup>
   );
 }
+
 
 export default App;

@@ -1,5 +1,6 @@
 import { Product } from "./Product";
 
+
 export function Home() {
     const products = [
         {

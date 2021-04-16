@@ -13,3 +13,5 @@ RegEx
 .{15,22} - any characters between the limit. 
 (?=.*[a-z])  (?=.*[A-Z]) (?=.*[0-9]) (?=.*[!@#$%^&*])
 AA%^%^&%xsdsdg4&
+
+Bug : 1. nav content disappearing after resizing.
