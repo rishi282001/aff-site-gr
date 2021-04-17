@@ -7,6 +7,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { NotFound } from "./NotFound";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Titlebar } from "./Titlebar"
+import { Profile } from "./Profile";
 
 function App() {
   const location = useLocation();
@@ -19,8 +20,9 @@ function App() {
         key={location.pathname}
       >
         <div className="App">
-          <Titlebar />
-          <Navbar />
+          {/* <Titlebar /> */}
+          {/* <Navbar /> */}
+          <Profile />
           <Switch location={location}>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

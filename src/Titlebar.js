@@ -6,17 +6,18 @@ export function Titlebar() {
 
     const toggleHandler = () => {
         let toggle = document.querySelector(".toggle");
+        let toggleButton = document.querySelector(".icon-toggle");
 
         if(switchState)
         {
             toggle.style.transform = "translateX(0px)";
             toggle.style.backgroundColor = "#000";
-            toggle.setAttribute('class','toggle fa fa-moon-o');
+            toggleButton.setAttribute('class','icon-toggle fa fa-moon-o');
         }
         else
         {
             toggle.style.backgroundColor = "#0077FF";
-            toggle.setAttribute('class','toggle');
+            toggleButton.setAttribute('class','icon-toggle ');
             toggle.style.transform = "translateX(-30px)";
         }
 
@@ -27,14 +28,18 @@ export function Titlebar() {
         <div className="titlebar">
             <h2>Fill Your Trolly</h2>
             <div className="helper-holder" >
-                <IconButton>
-                    <span className="switch" onClick={() => toggleHandler()}>
-                        <i className="toggle"></i>
+                <IconButton onClick={() => toggleHandler()}>
+                    <span className="switch">
+                        <div className="toggle">
+                            <i className="icon-toggle"></i>
+                        </div>
                     </span>
                 </IconButton>
+
                 <IconButton style={{padding: "10px"}}>
                     <i className="fa fa-user" aria-hidden="true"></i>
                 </IconButton>
+
                 <IconButton style={{padding: "10px"}}>
                     <i className="fa fa-heart" aria-hidden="true"></i>
                 </IconButton>
