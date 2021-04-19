@@ -20,9 +20,9 @@ function App() {
         key={location.pathname}
       >
         <div className="App">
-          {/* <Titlebar /> */}
-          {/* <Navbar /> */}
-          <Profile />
+          {/* <Titlebar />
+          <Navbar /> 
+          <Profile /> */}
           <Switch location={location}>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

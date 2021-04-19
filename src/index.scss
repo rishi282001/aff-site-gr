@@ -24,6 +24,11 @@ code {
 }
 
 
+.App {
+  height: 100vh;
+}
+
+
 
 @mixin flexBox($dir) {
   display: flex;
@@ -315,33 +320,13 @@ code {
 
 
 
-/* Router animation */
-
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  transition: opacity 700ms ease;
-  opacity: 1;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit-active {
-  transition: opacity 700ms ease;
-  opacity: 0;
-}
-
 .profile {
   @include flexBox(column);
   row-gap: 20px;
 
   .holder-1, .holder-2 {
-    display: flex;
-    justify-content: center;
+    @include flexBox(row);
+    flex-wrap: wrap;
     column-gap: 20px;
   }
 
@@ -362,8 +347,36 @@ code {
       transform: scale(1.8);
     }
   }
-  
 }
+
+
+
+
+
+
+
+
+/* Router animation */
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 700ms ease;
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  transition: opacity 700ms ease;
+  opacity: 0;
+}
+
+
 
 
 
@@ -414,6 +427,13 @@ code {
       }
     }
   }
+
+  .profile {
+    .user, .records, .wishlist, .signout {
+      height: 150px;
+      width: 200px;
+    }
+  }
 }
 
 @media(max-width: 469px) {
@@ -436,6 +456,15 @@ code {
         width: 100%;
         margin: 0 2px 0 2px;
       }
+    }
+  }
+
+
+  .profile {
+    .user, .records, .wishlist, .signout {
+      height: 150px;
+      width: 100vw;
+      margin: auto;
     }
   }
 }

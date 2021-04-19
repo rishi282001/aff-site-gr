@@ -2,7 +2,7 @@ import { IconButton } from "@material-ui/core";
 import { useState } from "react";
 
 export function Titlebar() {
-    const[switchState, setSwitchState] = useState(false);
+    const[switchState, setSwitchState] = useState(true);
 
     const toggleHandler = () => {
         let toggle = document.querySelector(".toggle");
