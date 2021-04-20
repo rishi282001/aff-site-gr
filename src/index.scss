@@ -284,11 +284,17 @@ code {
     height: 300px;
     margin-top: 10px;
   }
+
+  .topic {
+    width: 100%;
+    text-align: left;
+    padding: 0px 0px 0px 25px;  
+  }
   
   .home-products {
     display: inline-flex;
     max-width: 99.5vw;
-    column-gap: 4px;
+    column-gap: 20px;
     overflow: auto;
     margin-top: 10px;
 
@@ -315,6 +321,7 @@ code {
         padding-left: 3px;
         width: 100%;
       }
+
     }
   }
 }

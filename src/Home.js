@@ -67,7 +67,8 @@ export function Home() {
 
     return (
         <div className="home">
-            <img src="realme.jpg" className="banner"></img>
+            <img src="k20.jpg" className="banner"></img>
+            <h2 className="topic"> Top deals </h2>
             <div className="home-products">
             {
                 products.map((product,key) => {
@@ -83,7 +84,8 @@ export function Home() {
                 })
             }
             </div>
-            <img src="k20.jpg" className="banner"></img>
+            
+            <img src="realme.jpg" className="banner"></img>
         </div>
     );
 }
