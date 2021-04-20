@@ -1,46 +1,89 @@
+import { HomeProducts } from "./HomeProducts";
 import { Product } from "./Product";
-
 
 export function Home() {
     const products = [
         {
-            imgLink: "",
-            title: "Redmi note 9 pro",
-            price: "12,000",
-            rating: "3.0 of 5.0 stars",
-            totalRating: "(2000)"
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "5 stars",
+            price: "10,000 RS"
         },
         {
-            imgLink: "",
-            title: "Redmi note 9 pro",
-            price: "12,000",
-            rating: "3.0 of 5.0 stars",
-            totalRating: "(2000)"
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
         },
         {
-            imgLink: "",
-            title: "Redmi note 9 pro",
-            price: "12,000",
-            rating: "3.0 of 5.0 stars",
-            totalRating: "(2000)"
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
         },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "5 stars",
+            price: "2000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "4000 RS"
+        },
+        {
+            imgLink: "image.png",
+            title: "Air-pods from amazon becoming booming and makes the pair",
+            starRating: "4 stars",
+            price: "20,000 RS"
+        }
     ]
 
-    return(
+    return (
         <div className="home">
+            <img src="realme.jpg" className="banner"></img>
+            <div className="home-products">
             {
-                // products.map((product, key) => {
-                //     return(
-                //         <Product
-                //           imgLink={product.imgLink}
-                //           title={product.title}
-                //           price={product.price}
-                //           rating={product.rating}
-                //           totalRating={product.totalRating}
-                //         />
-                //     );
-                // })
+                products.map((product,key) => {
+                    return (
+                        <HomeProducts
+                            key={key}
+                            imgLink={product.imgLink}
+                            title={product.title}
+                            starRating={product.starRating}
+                            price={product.price}
+                        />
+                    );
+                })
             }
+            </div>
+            <img src="k20.jpg" className="banner"></img>
         </div>
     );
 }

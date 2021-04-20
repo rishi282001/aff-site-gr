@@ -7,16 +7,10 @@ export function Navbar() {
     overlay.setAttribute("class","overlay");
     overlay.addEventListener("click",() => handleSlide());
 
-    // useEffect(() => {
-    //     window.addEventListener('resize',() => {
-           
-    //     });
-    // },[]);
-
     function handleSlide() {
         let navContent = document.querySelector(".nav-content");
         let barsButton = document.querySelector("#bars-btn");
-        let body = document.getElementById("root");
+        let body = document.querySelector(".App");
         count++;
 
         if(count % 2 !== 0)

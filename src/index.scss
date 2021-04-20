@@ -7,6 +7,16 @@ $primary-color: #9EEBE2;
   font-family: 'Inter', sans-serif;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 body {
   margin: 0;
@@ -26,6 +36,19 @@ code {
 
 .App {
   height: 100vh;
+  position: relative;
+
+  .div-1 {
+    height: 10%;
+  }
+
+  .div-2 {
+    height: 10%;
+  }
+
+  .div-3 {
+    height: 80%;
+  }
 }
 
 
@@ -68,7 +91,7 @@ code {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  z-index: 20;
+  z-index: 2000;
   background: rgba(0,0,0,0.5);
 }
 
@@ -77,7 +100,6 @@ code {
 // Titlebar
 
 .titlebar {
-  position: fixed;
   width: 100vw;
   height: 70px;
   z-index:100;
@@ -137,7 +159,6 @@ code {
   display: flex;
   height: 10vh;
   width: 100vw;
-  position: fixed;
   justify-content: space-evenly;
   align-items: center;
   background: #FFF;
@@ -254,8 +275,48 @@ code {
 
 
 .home {
-  @include flexBox(column);
-  row-gap: 20px;
+  column-gap: 10px;
+  height: 100%;
+  overflow-y: scroll;
+
+  .banner {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+  }
+  
+  .home-products {
+    display: inline-flex;
+    max-width: 99.5vw;
+    column-gap: 4px;
+    overflow: auto;
+    margin-top: 10px;
+
+    .home-product {
+      @include flexBox(column);
+      row-gap: 5px;
+      max-width: 220px;
+      text-align: left;
+      padding: 10px ;
+      border-radius: 10px;
+      background-color: #FFF;
+
+      .price {
+        font-weight: bold;
+      }
+
+      img {
+        height: 150px;
+        width: 150px;
+        border-radius: 10px;
+      }
+
+      span {
+        padding-left: 3px;
+        width: 100%;
+      }
+    }
+  }
 }
 
 
@@ -322,7 +383,9 @@ code {
 
 .profile {
   @include flexBox(column);
+  height: 100%;
   row-gap: 20px;
+
 
   .holder-1, .holder-2 {
     @include flexBox(row);
@@ -350,8 +413,54 @@ code {
 }
 
 
+/* Wishlist */
+
+.wishlist {
+  position: relative;
+
+  .heart-holder {
+    position: relative;    
+    height: 30px;
+    @include flexBox(row);
+
+    i {
+      position: absolute;
+
+      &:nth-child(1) {
+        transform: scale(2);
+      }
+
+      &:nth-child(2) {
+        transform: scale(1.4);
+      }
+    }
+  }
+}
 
 
+
+
+.search {
+  width: 300px;
+  padding: 5px;
+  border-radius: 35px;
+  background-color: #FFF;
+
+  input {
+    width: 88%;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+  }
+}
+
+
+
+
+/* home Products */
+
+
+   
 
 
 
@@ -392,6 +501,7 @@ code {
   }
 
   .navbar {
+    position: relative;
     justify-content: left;
 
     .fa.fa-bars {

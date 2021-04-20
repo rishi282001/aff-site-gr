@@ -30,7 +30,7 @@ export function Profile() {
                <IconButton>
                 <div className="signout">
                         <i className="fa fa-power-off" aria-hidden="true"></i>
-                        <h3>signout</h3>
+                        <h3>Signout</h3>
                     </div>
                </IconButton>
             </div>

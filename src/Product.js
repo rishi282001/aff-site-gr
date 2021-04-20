@@ -13,6 +13,7 @@ export function Product(props) {
                     <span className="product-rating"> {props.rating} </span>
                     <span className="product-totalRating"> {props.totalRating} </span>
                 </div>
+
                 <div className="button-holder">
                     <Button
                         id="buy-now-btn"
@@ -20,8 +21,9 @@ export function Product(props) {
                         size="medium"
                         color="primary"
                     >
-                        Buy Now
+                        {props.button1}
                     </Button>
+
                     <Button
                         id="add-to-wishist-btn"
                         variant="contained"
@@ -29,7 +31,7 @@ export function Product(props) {
                         color="primary"
                         style={{background: "#FF7171", color: "#FFF"}}
                     >
-                        Add to wishlist
+                        {props.button2}
                     </Button>
                 </div>
             </div>
